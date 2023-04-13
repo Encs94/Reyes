@@ -7,6 +7,8 @@ import rey2 from '../src/imagenes/rey2.jpg';
 import rey3 from '../src/imagenes/rey3.jpg';
 import rey4 from '../src/imagenes/rey4.jpg';
 
+// Come pinga
+
 
 function App() {
 
