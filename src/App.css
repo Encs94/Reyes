@@ -1,0 +1,15 @@
+.plantilla {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+img {
+  height: 300px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
