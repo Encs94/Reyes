@@ -1,51 +1,37 @@
-import Rey from './componente/Rey';
+import CardRey from './components/cards/CardRey';
 import './App.css';
-import {useState} from 'react';
+import { useState } from 'react';
+import reyes from './api/mockData';
 
-import rey1 from '../src/imagenes/rey1.jpg';
-import rey2 from '../src/imagenes/rey2.jpg';
-import rey3 from '../src/imagenes/rey3.jpg';
-import rey4 from '../src/imagenes/rey4.jpg';
 
 // Come pinga
 
-
 function App() {
 
-  const [msj, setmsj]=useState("Por defecto")
+  const [msj, setmsj] = useState("Por defecto")
 
-  const prueba = (nombre) => {
-    setmsj({nombre})
+  const handleClick = () => {
+    console.log("click en CardRey")
   }
-
-  
 
   return (
     <div>
       <h1>{msj}</h1>
       <div className="plantilla">
-        <Rey 
-          nombre={"Paco"}
-          vacas="4"
-          img={rey1}
-          funcion={prueba}
-          
-        />
-        <Rey 
-          nombre={"Paco"}
-          vacas="6"
-          img={rey2}
-        />
-        <Rey 
-          nombre={"Paco"}
-          vacas="3"
-          img={rey3}
-        />
-        <Rey 
-          nombre={"Paco"}
-          vacas="10"
-          img={rey4}
-        />
+        {
+          reyes.map(rey => {
+            return (
+              <CardRey
+                key={rey}
+                nombre={rey.name}
+                vacas={rey.vacas}
+                img={rey.img}
+                onClick={() => handleClick}
+              />
+            )
+          })
+        }
+      
       </div>
     </div>
   );
