@@ -6,11 +6,10 @@ import reyes from './api/mockData';
 
 function App() {
 
-  
   const [msj, setmsj] = useState("Por defecto")
 
-  const modificarMsj = () => {
-    
+  const modificarMsj = (nombre, votos) => {
+    setmsj("Has votado a " + nombre + " con " + votos)
   }
 
   return (
@@ -21,6 +20,7 @@ function App() {
           reyes.map(rey => {
             return (
               <CardRey
+                onAction={modificarMsj}
                 key={rey.id}
                 nombre={rey.name}
                 vacas={rey.vacas}
